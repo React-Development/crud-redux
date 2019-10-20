@@ -11,7 +11,7 @@ const NuevoProducto = () => {
             </h2>
             <form>
               <div className="form-group">
-                <label>Nombre Platillo</label>
+                <label>Nombre Libro</label>
                 <input
                   type="text"
                   className="form-control"
@@ -19,7 +19,7 @@ const NuevoProducto = () => {
                 />
               </div>
               <div className="form-group">
-                <label>Precio Platillo</label>
+                <label>Precio Libro</label>
                 <input
                   type="text"
                   className="form-control"
