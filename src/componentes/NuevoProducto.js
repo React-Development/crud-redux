@@ -1,21 +1,47 @@
-import React from "react";
+import React, {useState} from "react";
+import { isIfStatement } from "@babel/types";
 
 const NuevoProducto = () => {
-  return (
+  
+    // State
+    const [nombre, guardarNombre] = useState('');
+    const [precio, guardarPrecio] = useState('');
+
+
+    // Agregar Nuevo Producto
+    const submitNuevoProducto = e => {
+        e.preventDefault();
+
+        // Validar formulario
+        if(nombre.trim() === '' || precio.trim() === '') {
+            console.log('Error validacion');
+            return; 
+        }
+        // Si pasa la validacion
+
+        // Redireccionar
+
+    }
+
+    return (
     <div className="row justify-content-center mt-5">
       <div className="col-md-8">
         <div className="card">
           <div className="card-body">
             <h2 className="text-center mb-4 font-weight-bold ">
-              Agregar Nuevo Producto
+              Agregar Nuevo Libro
             </h2>
-            <form>
+            <form
+                onSubmit={submitNuevoProducto}
+            >
               <div className="form-group">
                 <label>Nombre Libro</label>
                 <input
                   type="text"
                   className="form-control"
                   placeholder="Nombre Libro"
+                  value={nombre}
+                  onChange={e=> guardarNombre(e.target.value)}
                 />
               </div>
               <div className="form-group">
@@ -24,6 +50,8 @@ const NuevoProducto = () => {
                   type="text"
                   className="form-control"
                   placeholder="Precio Libro"
+                  value={precio}
+                  onChange={e=>guardarPrecio(e.target.value)}
                 />
               </div>
 
